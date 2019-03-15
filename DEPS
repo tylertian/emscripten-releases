@@ -3,13 +3,13 @@
 # found in the LICENSE file.
 
 vars = {
-  'binaryen_url': 'https://github.googlesource.com/WebAssembly/binaryen',
+  'binaryen_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/binaryen',
   'emscripten_url': 'https://github.com/emscripten-core/emscripten',
   'fastcomp_url': 'https://github.com/emscripten-core/emscripten-fastcomp',
   'fastcomp_clang_url': 'https://github.com/emscripten-core/emscripten-fastcomp-clang',
-  'llvm_project_url': 'https://github.googlesource.com/llvm/llvm-project',
-  'wabt_url': 'https://github.googlesource.com/WebAssembly/wabt',
-  'waterfall_url': 'https://github.googlesource.com/WebAssembly/waterfall',
+  'llvm_project_url': 'https://github.com/llvm/llvm-project',
+  'wabt_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/wabt',
+  'waterfall_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/waterfall',
   # TODO: clang, v8 for testing, Gcc for torture tests, llvm test-suite
 
   # Three lines of non-changing comments so that
