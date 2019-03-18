@@ -4,9 +4,9 @@
 
 vars = {
   'binaryen_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/binaryen',
-  'emscripten_url': 'https://github.com/emscripten-core/emscripten',
-  'fastcomp_url': 'https://github.com/emscripten-core/emscripten-fastcomp',
-  'fastcomp_clang_url': 'https://github.com/emscripten-core/emscripten-fastcomp-clang',
+  'emscripten_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten',
+  'fastcomp_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp',
+  'fastcomp_clang_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp-clang',
   'llvm_project_url': 'https://github.com/llvm/llvm-project',
   'wabt_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/wabt',
   'waterfall_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/waterfall',
