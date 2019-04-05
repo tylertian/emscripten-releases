@@ -15,27 +15,27 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling binaryen
   # and whatever else without interference from each other.
-  'binaryen_revision': 'f0ec4b02fb797387040c65d63f690b3856b1183e',
+  'binaryen_revision': '2129cef6acbbe4acd5fd675fbb00c329e2220a40',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling emscripten
   # and whatever else without interference from each other.
-  'emscripten_revision': '7545a66c871997e1c42ed0079bda0d09eb70e774',
+  'emscripten_revision': '941bbc6b9b35d3124f17d2503d7a32cc81032dac',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp
   # and whatever else without interference from each other.
-  'fastcomp_revision': 'af16ece2f07be6b83674cc3729249f8aca720fc2',
+  'fastcomp_revision': '55fe180b3a624c5a7c31dc52ed7af095c5d4fef5',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp_clang
   # and whatever else without interference from each other.
-  'fastcomp_clang_revision': '0479dcd35c96e2c5d1485dc8719e9c840a95b057',
+  'fastcomp_clang_revision': 'c498993ea75111f013b9fd7bda23eec40bff2970',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling llvm_project
   # and whatever else without interference from each other.
-  'llvm_project_revision': '9134f84ba4eaf593653739047b0c4fffa94c9ad0',
+  'llvm_project_revision': '40442658db9461ab86bf33d7889689482a27c874',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling wabt
   # and whatever else without interference from each other.
-  'wabt_revision': '8ab47309e20748c465e28773c92cef7029f5e410',
+  'wabt_revision': 'a927578d466838b6dacfdd30c2aebc891bcf594e',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
