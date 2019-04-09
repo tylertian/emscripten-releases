@@ -4,6 +4,7 @@
 
 vars = {
   'binaryen_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/binaryen',
+  'clang_url': 'https://chromium.googlesource.com/chromium/src/tools/clang',
   'emscripten_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten',
   'fastcomp_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp',
   'fastcomp_clang_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp-clang',
@@ -16,6 +17,10 @@ vars = {
   # the commit queue can handle CLs rolling binaryen
   # and whatever else without interference from each other.
   'binaryen_revision': '2129cef6acbbe4acd5fd675fbb00c329e2220a40',
+  # Three lines of non-changing comments so that
+  # the commit queue can handle CLs rolling clang
+  # and whatever else without interference from each other.
+  'clang_revision': 'f8222157207f6d2f0529f354afdcbe00ad7989ea',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling emscripten
   # and whatever else without interference from each other.
@@ -44,11 +49,12 @@ vars = {
 
 deps = {
   # TODO: refactor waterfall script such that we don't have to use the hardcoded work dir.
-  'waterfall/src/work/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
-  'waterfall/src/work/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
-  'waterfall/src/work/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
-  'waterfall/src/work/emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
-  'waterfall/src/work/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
-  'waterfall/src/work/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
+  'sync/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
+  'sync/chromium-clang': Var('clang_url') + '@' + Var('clang_revision'),
+  'sync/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
+  'sync/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
+  'sync/emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
+  'sync/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
+  'sync/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
   'waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
