@@ -11,7 +11,7 @@ vars = {
   'llvm_project_url': 'https://github.com/llvm/llvm-project',
   'wabt_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/wabt',
   'waterfall_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/waterfall',
-  # TODO: clang, v8 for testing, Gcc for torture tests, llvm test-suite
+  # TODO: v8 for testing, Gcc for torture tests, llvm test-suite
 
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling binaryen
@@ -44,17 +44,33 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
-  'waterfall_revision': '54e62309ea27c3523d634a2e81c116fdfc0a540e',
+  'waterfall_revision': '6aa7200914d410580a50c0ee735d48e619128692',
 }
 
 deps = {
   # TODO: refactor waterfall script such that we don't have to use the hardcoded work dir.
-  'sync/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
-  'sync/chromium-clang': Var('clang_url') + '@' + Var('clang_revision'),
-  'sync/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
-  'sync/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
-  'sync/emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
-  'sync/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
-  'sync/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
+  'binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
+  # Clang is in a subdir because scripts/update.py hardcodes its output path
+  'tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
+  'emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
+  'emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
+  'emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
+  'llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
+  'wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
   'waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
+
+hooks = [
+  {
+    # Note: On Win, this should run after win_toolchain, as it may use it.
+    'name': 'clang',
+    'pattern': '.',
+    'action': ['python', 'tools/clang/scripts/update.py'],
+  },
+  {
+    'name': 'cmake',
+    'pattern': '.',
+    'action': ['python', 'waterfall/src/build.py', '--sync-include=cmake',
+              '--no-build', '--no-test', '--prebuilt-dir=.'],
+  },
+]
