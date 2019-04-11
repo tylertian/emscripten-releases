@@ -71,6 +71,6 @@ hooks = [
     'name': 'cmake',
     'pattern': '.',
     'action': ['python', 'waterfall/src/build.py', '--sync-include=cmake',
-              '--no-build', '--no-test', '--prebuilt-dir=.'],
+              '--no-build', '--no-test', '--prebuilt-dir=../..'],
   },
 ]
