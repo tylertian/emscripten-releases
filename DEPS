@@ -9,6 +9,7 @@ vars = {
   'fastcomp_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp',
   'fastcomp_clang_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp-clang',
   'llvm_project_url': 'https://github.com/llvm/llvm-project',
+  'v8_url': 'https://chromium.googlesource.com/v8/v8',
   'wabt_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/wabt',
   'waterfall_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/waterfall',
   # TODO: v8 for testing, Gcc for torture tests, llvm test-suite
@@ -38,6 +39,10 @@ vars = {
   # and whatever else without interference from each other.
   'llvm_project_revision': '40442658db9461ab86bf33d7889689482a27c874',
   # Three lines of non-changing comments so that
+  # the commit queue can handle CLs rolling v8
+  # and whatever else without interference from each other.
+  'v8_revision': '9dfb6a358244acf4d0d7479396cb7bf6a3643ee7',
+  # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling wabt
   # and whatever else without interference from each other.
   'wabt_revision': 'a927578d466838b6dacfdd30c2aebc891bcf594e',
@@ -56,6 +61,7 @@ deps = {
   'emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
   'emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
   'llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
+  'v8/v8': Var('v8_url') + '@' + Var('v8_revision'),
   'wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
   'waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
