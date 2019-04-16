@@ -71,12 +71,12 @@ hooks = [
     # Note: On Win, this should run after win_toolchain, as it may use it.
     'name': 'clang',
     'pattern': '.',
-    'action': ['python', 'tools/clang/scripts/update.py'],
+    'action': ['python', 'emscripten-releases/src/tools/clang/scripts/update.py'],
   },
   {
     'name': 'cmake',
     'pattern': '.',
-    'action': ['python', 'waterfall/src/build.py', '--sync-include=cmake',
+    'action': ['python', 'emscripten-releases/src/waterfall/src/build.py', '--sync-include=cmake',
               '--no-build', '--no-test', '--prebuilt-dir=../..'],
   },
 ]
