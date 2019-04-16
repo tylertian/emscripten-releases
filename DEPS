@@ -53,17 +53,16 @@ vars = {
 }
 
 deps = {
-  # TODO: refactor waterfall script such that we don't have to use the hardcoded work dir.
-  'emscripten-releases/src/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
+  'emscripten-releases/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
   # Clang is in a subdir because scripts/update.py hardcodes its output path
-  'emscripten-releases/src/tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
-  'emscripten-releases/src/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
-  'emscripten-releases/src/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
-  'emscripten-releases/src/emscripten-fastcomp-clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
-  'emscripten-releases/src/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
+  'emscripten-releases/tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
+  'emscripten-releases/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
+  'emscripten-releases/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
+  'emscripten-releases/emscripten-fastcomp-clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
+  'emscripten-releases/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
   'v8/v8': Var('v8_url') + '@' + Var('v8_revision'),
-  'emscripten-releases/src/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
-  'emscripten-releases/src/waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
+  'emscripten-releases/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
+  'emscripten-releases/waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
 
 hooks = [
@@ -71,7 +70,7 @@ hooks = [
     # Note: On Win, this should run after win_toolchain, as it may use it.
     'name': 'clang',
     'pattern': '.',
-    'action': ['python', 'emscripten-releases/src/tools/clang/scripts/update.py'],
+    'action': ['python', 'emscripten-releases/tools/clang/scripts/update.py'],
   },
   {
     'name': 'cmake',
