@@ -29,11 +29,11 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp
   # and whatever else without interference from each other.
-  'fastcomp_revision': '55fe180b3a624c5a7c31dc52ed7af095c5d4fef5',
+  'fastcomp_revision': 'ae6652679b5b4aeb5528c280060a4585c1bc7c38',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp_clang
   # and whatever else without interference from each other.
-  'fastcomp_clang_revision': 'c498993ea75111f013b9fd7bda23eec40bff2970',
+  'fastcomp_clang_revision': 'b625a9fab9710e3d50cd6b83f2eecac0794c19dc',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling llvm_project
   # and whatever else without interference from each other.
@@ -49,21 +49,21 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
-  'waterfall_revision': '6aa7200914d410580a50c0ee735d48e619128692',
+  'waterfall_revision': '384990dfd71402ae5734fc136239e0292ea857d8',
 }
 
 deps = {
   # TODO: refactor waterfall script such that we don't have to use the hardcoded work dir.
-  'binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
+  'emscripten-releases/src/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
   # Clang is in a subdir because scripts/update.py hardcodes its output path
-  'tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
-  'emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
-  'emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
-  'emscripten-fastcomp/tools/clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
-  'llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
+  'emscripten-releases/src/tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
+  'emscripten-releases/src/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
+  'emscripten-releases/src/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
+  'emscripten-releases/src/emscripten-fastcomp-clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
+  'emscripten-releases/src/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
   'v8/v8': Var('v8_url') + '@' + Var('v8_revision'),
-  'wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
-  'waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
+  'emscripten-releases/src/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
+  'emscripten-releases/src/waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
 
 hooks = [
