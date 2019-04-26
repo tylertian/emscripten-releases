@@ -60,7 +60,7 @@ deps = {
   'emscripten-releases/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
   'emscripten-releases/emscripten-fastcomp-clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
   'emscripten-releases/llvm-project': Var('llvm_project_url') + '@' + Var('llvm_project_revision'),
-  'v8/v8': Var('v8_url') + '@' + Var('v8_revision'),
+  'v8': Var('v8_url') + '@' + Var('v8_revision'),
   'emscripten-releases/wabt': Var('wabt_url') + '@' + Var('wabt_revision'),
   'emscripten-releases/waterfall': Var('waterfall_url') + '@' + Var('waterfall_revision'),
 }
@@ -76,6 +76,6 @@ hooks = [
     'name': 'cmake',
     'pattern': '.',
     'action': ['python', 'emscripten-releases/waterfall/src/build.py', '--sync-include=cmake',
-              '--no-build', '--no-test', '--prebuilt-dir=../..'],
+              '--no-build', '--no-test', '--prebuilt-dir=emscripten-releases'],
   },
 ]
