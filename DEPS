@@ -49,7 +49,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
-  'waterfall_revision': 'd9a78912ae3c9562b0343c5eeea60b4b42ce7140',
+  'waterfall_revision': '1dc8d7a796d8c4caa3969953fd1e058cdb518af0',
 }
 
 deps = {
@@ -78,4 +78,8 @@ hooks = [
     'action': ['python', 'emscripten-releases/waterfall/src/build.py', '--sync-include=cmake',
               '--no-build', '--no-test', '--prebuilt-dir=emscripten-releases'],
   },
+]
+
+recursedeps = [
+  'v8'
 ]
