@@ -75,7 +75,7 @@ hooks = [
   {
     'name': 'cmake',
     'pattern': '.',
-    'action': ['python', 'emscripten-releases/waterfall/src/build.py', '--sync-include=cmake',
+    'action': ['python', 'emscripten-releases/waterfall/src/build.py', '--sync-include=cmake,nodejs,java',
               '--no-build', '--no-test', '--prebuilt-dir=emscripten-releases'],
   },
 ]
