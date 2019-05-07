@@ -17,7 +17,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling binaryen
   # and whatever else without interference from each other.
-  'binaryen_revision': '2129cef6acbbe4acd5fd675fbb00c329e2220a40',
+  'binaryen_revision': 'da716eb233f9fe7cefc61d9d1ce54f8b8c9d9126',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling clang
   # and whatever else without interference from each other.
@@ -29,15 +29,15 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp
   # and whatever else without interference from each other.
-  'fastcomp_revision': 'ae6652679b5b4aeb5528c280060a4585c1bc7c38',
+  'fastcomp_revision': '55fe180b3a624c5a7c31dc52ed7af095c5d4fef5',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling fastcomp_clang
   # and whatever else without interference from each other.
-  'fastcomp_clang_revision': 'b625a9fab9710e3d50cd6b83f2eecac0794c19dc',
+  'fastcomp_clang_revision': 'c498993ea75111f013b9fd7bda23eec40bff2970',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling llvm_project
   # and whatever else without interference from each other.
-  'llvm_project_revision': '40442658db9461ab86bf33d7889689482a27c874',
+  'llvm_project_revision': '9a1c2b77764eccf8e2988dbf249a186069e78676',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling v8
   # and whatever else without interference from each other.
@@ -45,7 +45,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling wabt
   # and whatever else without interference from each other.
-  'wabt_revision': 'a927578d466838b6dacfdd30c2aebc891bcf594e',
+  'wabt_revision': '3b8dfbff5ba95537fb1b6da151ad6a526503d405',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
