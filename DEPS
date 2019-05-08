@@ -8,7 +8,7 @@ vars = {
   'emscripten_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten',
   'fastcomp_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp',
   'fastcomp_clang_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp-clang',
-  'llvm_project_url': 'https://github.com/llvm/llvm-project',
+  'llvm_project_url': 'https://chromium.googlesource.com/github.com/llvm/llvm-project',
   'v8_url': 'https://chromium.googlesource.com/v8/v8',
   'wabt_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/wabt',
   'waterfall_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/waterfall',
