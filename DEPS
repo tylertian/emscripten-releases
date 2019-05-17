@@ -4,7 +4,6 @@
 
 vars = {
   'binaryen_url': 'https://chromium.googlesource.com/external/github.com/WebAssembly/binaryen',
-  'clang_url': 'https://chromium.googlesource.com/chromium/src/tools/clang',
   'emscripten_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten',
   'fastcomp_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp',
   'fastcomp_clang_url': 'https://chromium.googlesource.com/external/github.com/emscripten-core/emscripten-fastcomp-clang',
@@ -18,10 +17,6 @@ vars = {
   # the commit queue can handle CLs rolling binaryen
   # and whatever else without interference from each other.
   'binaryen_revision': 'f86375ac2121db5fec236f4e35f73adde9318a8c',
-  # Three lines of non-changing comments so that
-  # the commit queue can handle CLs rolling clang
-  # and whatever else without interference from each other.
-  'clang_revision': 'f8222157207f6d2f0529f354afdcbe00ad7989ea',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling emscripten
   # and whatever else without interference from each other.
@@ -54,8 +49,6 @@ vars = {
 
 deps = {
   'emscripten-releases/binaryen': Var('binaryen_url') + '@' + Var('binaryen_revision'),
-  # Clang is in a subdir because scripts/update.py hardcodes its output path
-  'emscripten-releases/tools/clang': Var('clang_url') + '@' + Var('clang_revision'),
   'emscripten-releases/emscripten': Var('emscripten_url') + '@' + Var('emscripten_revision'),
   'emscripten-releases/emscripten-fastcomp': Var('fastcomp_url') + '@' + Var('fastcomp_revision'),
   'emscripten-releases/emscripten-fastcomp-clang': Var('fastcomp_clang_url') + '@' + Var('fastcomp_clang_revision'),
@@ -67,16 +60,11 @@ deps = {
 
 hooks = [
   {
-    # Note: On Win, this should run after win_toolchain, as it may use it.
-    'name': 'clang',
-    'pattern': '.',
-    'action': ['python', 'emscripten-releases/tools/clang/scripts/update.py'],
-  },
-  {
     'name': 'cmake',
     'pattern': '.',
-    'action': ['python', 'emscripten-releases/waterfall/src/build.py', '--sync-include=cmake,nodejs,java',
-              '--no-build', '--no-test', '--prebuilt-dir=emscripten-releases'],
+    'action': ['python', 'emscripten-releases/waterfall/src/build.py',
+               '--sync-include=cmake,nodejs,java','--no-build', '--no-test',
+               '--prebuilt-dir=emscripten-releases', '--v8-dir=v8'],
   },
 ]
 
