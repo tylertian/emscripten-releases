@@ -1,0 +1,16 @@
+# Managed by DEPS checkouts
+binaryen
+emscripten
+emscripten-fastcomp
+emscripten-fastcomp-clang
+llvm-project
+wabt
+waterfall
+
+# Managed by DEPS hooks
+jre-*
+node-*
+cmake-*
+
+# Build directory for buildbots
+build
