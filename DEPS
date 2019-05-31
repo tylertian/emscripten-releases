@@ -44,7 +44,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
-  'waterfall_revision': '5096cbaa68fc010b3ab0ea3a7b411e5a11287e7f',
+  'waterfall_revision': '5c614a490e4f53ab3ff6b52c43ba8a645b7bb912',
 }
 
 deps = {
