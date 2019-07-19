@@ -40,7 +40,7 @@ vars = {
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling wabt
   # and whatever else without interference from each other.
-  'wabt_revision': '3b8dfbff5ba95537fb1b6da151ad6a526503d405',
+  'wabt_revision': '04fd00d2fc29b565da350739d3a1f9c85267d5d2',
   # Three lines of non-changing comments so that
   # the commit queue can handle CLs rolling waterfall
   # and whatever else without interference from each other.
